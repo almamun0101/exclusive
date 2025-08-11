@@ -47,7 +47,8 @@ const Navbar = () => {
               <CiSearch className="absolute -top-2 md:top-1 right-0 md:right-5" />
               <input
                 type="text"
-                className="hidden md:block bg-gray-200 p-1 rounded focus:outline-0 "
+                placeholder="what Are you looking for ?"
+                className="text-sm pl-4 pr-10 py-2 hidden md:block bg-gray-200 p-1 rounded focus:outline-0 "
               />
             </div>
             <CiHeart />
