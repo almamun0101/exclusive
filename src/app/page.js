@@ -1,5 +1,6 @@
 import Header from '@/component/Header'
 import Navbar from '@/component/Navbar'
+import Today from '@/component/Today'
 import Topbar from '@/component/Topbar'
 import React from 'react'
 
@@ -9,6 +10,7 @@ const page = () => {
       <Topbar/>
       <Navbar/>
       <Header/>
+      <Today/>
     </div>
   )
 }
