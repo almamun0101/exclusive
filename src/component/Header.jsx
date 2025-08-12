@@ -9,8 +9,8 @@ const Header = () => {
     <div>
       <div className="border-t ">
         <div className="container flex justify-between ">
-          <div className="w-1/4 py-5 border-r border-black">
-            <div className="flex flex-col px-5 gap-3">
+          <div className="md:w-1/4 py-5  border-black">
+            <div className="hidden md:flex flex-col px-5 gap-3 border-r">
               <Link href="/about">Woman’s Fashion</Link>
               <Link href="/about">Men’s Fashion</Link>
               <Link href="/about">Electronics</Link>
@@ -23,7 +23,7 @@ const Header = () => {
             </div>
           </div>
           <div className="p-5 w-full">
-            <div className="bg-black flex justify-between relative">
+            <div className="bg-black grid grid-cols-1 sm:grid-cols-2 justify-between relative">
               <div className="text-white p-10 pt-20">
                 <div className="flex items-center pb-5 gap-5 ">
                   <img src="applelogo.png" alt="" />
