@@ -1,7 +1,8 @@
 import React from "react";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+import CountDown from "./CountDown";
 
-const Heading = ({ title,heading }) => {
+const Heading = ({ title, heading, endTime }) => {
   return (
     <div className="">
       <div className="flex items-center gap-2">
@@ -9,10 +10,9 @@ const Heading = ({ title,heading }) => {
         <h2 className="text-pri font-bold ">{title}</h2>
       </div>
       <div className="flex justify-between py-5">
-        <div className="flex  flex-wrap justify-between items-center gap-2 lg:gap-20">
+        <div className="flex items-center gap-10 lg:gap-20">
           <h3 className="font-bold  text-4xl">{heading} </h3>
-
-    
+        {!isNaN(new Date(endTime).getTime()) && <CountDown endTime={endTime}/>}
         </div>
         <div className="flex items-center gap-5 ">
           <IoIosArrowRoundBack className="bg-gray-200 p-1 text-4xl  rounded-full " />

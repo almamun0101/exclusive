@@ -49,15 +49,14 @@ const Today = () => {
     <div>
       <div className="px-5 container pb-200">
         {/* heading */}
-        <Heading title={"Today's"} heading={"Flash Sale's"} />
+        <Heading title={"Today's"} heading={"Flash Sale's"} endTime={"2025-12-31T23:59:59"} />
 
-        {/* flash sell */}
-       <CountDown/>
+     
 
         {/* product */}
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {product.map((item) => (
-            <div className="bg-gray-200  group">
+          {product.map((item,index) => (
+            <div key={index} className="bg-gray-200  group">
               {/* image part of the product  */}
               <div className="  flex flex-col p-5 relative">
                 <div className="flex justify-between items-center">
