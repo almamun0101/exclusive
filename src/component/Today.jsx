@@ -1,12 +1,6 @@
 import React from "react";
-
 import Heading from "./Heading";
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
-import CountDown from "./CountDown";
-import Slides from "./Slides";
-import Swiper from "./Swiper";
-
-const product = [
+const products = [
   {
     name: "HAVIT HV-G92 Gamepad",
     img: "product1.png",
@@ -85,10 +79,19 @@ const Today = () => {
     <div>
       <div className="px-5 container pb-200">
         {/* heading */}
-        <Heading title={"Today's"} heading={"Flash Sale's"} endTime={"2025-12-31T23:59:59"} />
-        {/* product */}
-      
-       {/* <Swiper/> */}
+        <Heading
+          title={"Today's"}
+          heading={"Flash Sale's"}
+          endTime={"2025-12-31T23:59:59"}
+          product={products}
+        />
+
+        <div className="flex justify-center py-5 lg:py-15">
+          <button className="bg-pri px-10 py-5 text-center text-white  rounded-lg">
+            View All Products
+          </button>
+        </div>
+        <hr className="text -[#b5b5b5]" />
       </div>
     </div>
   );

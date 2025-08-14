@@ -3,81 +3,8 @@ import { useRef, useState, useEffect } from "react";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import CountDown from "./CountDown";
 import Slides from "./Slides";
-const product = [
-  {
-    name: "HAVIT HV-G92 Gamepad",
-    img: "product1.png",
-    offer: "120",
-    price: "160",
-    discount: "40",
-    rating: "5",
-    review: "88",
-  },
-  {
-    name: "AK-900 Wired Keyboard",
-    img: "product2.png",
-    offer: "1160",
-    price: "960",
-    discount: "35",
-    rating: "4",
-    review: "76",
-  },
-  {
-    name: "IPS LCD Gaming Monitor",
-    img: "product3.png",
-    offer: "370",
-    price: "400",
-    discount: "30",
-    rating: "5",
-    review: "99",
-  },
-  {
-    name: "S-Series Comfort Chair ",
-    img: "product4.png",
-    offer: "375",
-    price: "400",
-    discount: "25",
-    rating: "4.5",
-    review: "78",
-  },
-  {
-    name: "HAVIT HV-G92 Gamepad",
-    img: "product1.png",
-    offer: "120",
-    price: "160",
-    discount: "40",
-    rating: "5",
-    review: "88",
-  },
-  {
-    name: "AK-900 Wired Keyboard",
-    img: "product2.png",
-    offer: "1160",
-    price: "960",
-    discount: "35",
-    rating: "4",
-    review: "76",
-  },
-  {
-    name: "IPS LCD Gaming Monitor",
-    img: "product3.png",
-    offer: "370",
-    price: "400",
-    discount: "30",
-    rating: "5",
-    review: "99",
-  },
-  {
-    name: "S-Series Comfort Chair ",
-    img: "product4.png",
-    offer: "375",
-    price: "400",
-    discount: "25",
-    rating: "4.5",
-    review: "78",
-  },
-];
-const Heading = ({ title, heading, endTime }) => {
+
+const Heading = ({ title, heading, endTime ,product}) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
