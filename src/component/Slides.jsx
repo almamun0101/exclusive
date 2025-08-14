@@ -22,14 +22,14 @@ const Slides = ({ product , prevEl , nextEl  }) => {
           spaceBetween={20}
           slidesPerView={1} // default (mobile)
           breakpoints={{
-            // 640: {
-            //   slidesPerView: 2, // large screen
-            //   slidesPerGroup: 1, // slide 1 item at a time
-            // },
-            // 768: {
-            //   slidesPerView: 3, // large screen
-            //   slidesPerGroup: 1, // slide 1 item at a time
-            // },
+            640: {
+              slidesPerView: 2, // large screen
+              slidesPerGroup: 1, // slide 1 item at a time
+            },
+            768: {
+              slidesPerView: 3, // large screen
+              slidesPerGroup: 1, // slide 1 item at a time
+            },
             1024: {
               slidesPerView: 4, // large screen
               slidesPerGroup: 1, // slide 1 item at a time

@@ -96,7 +96,7 @@ const Heading = ({ title, heading, endTime }) => {
       </div>
 
       <div className="flex justify-between py-5">
-        <div className="flex flex-wrap items-center gap-2 lg:gap-20">
+        <div className="flex flex-wrap items-center gap-5 lg:gap-20">
           <h3 className="font-bold text-4xl">{heading}</h3>
           {!isNaN(new Date(endTime).getTime()) && <CountDown endTime={endTime} />}
         </div>
