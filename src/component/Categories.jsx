@@ -1,15 +1,11 @@
-import React from "react";
+"use client"
+import React, { useEffect, useRef, useState } from "react";
+
 import Heading from "./Heading";
-const products = [
-  {
-    name: "HAVIT HV-G92 Gamepad",
-    img: "product1.png",
-    offer: "120",
-    price: "160",
-    discount: "40",
-    rating: "5",
-    review: "88",
-  },
+// import Swiper from "./Swiper";
+import Slides from "./Slides";
+const product = [
+
   {
     name: "AK-900 Wired Keyboard",
     img: "product2.png",
@@ -74,27 +70,29 @@ const products = [
     review: "78",
   },
 ];
-const Today = () => {
+const Categories = () => {
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
+  
+    const [navReady, setNavReady] = useState({ prev: null, next: null });
+  
+    useEffect(() => {
+      // set refs after they are attached to the DOM
+      setNavReady({ prev: prevRef.current, next: nextRef.current });
+    }, []);
+  
   return (
     <div>
-      <div className="px-5 container py-10">
-        {/* heading */}
-        <Heading
-          title={"Today's"}
-          heading={"Flash Sale's"}
-          endTime={"2025-12-31T23:59:59"}
-          product={products}
+   <Heading
+          title={"Catagoreys"}
+          heading={"Browse By Category"}
+        
+          product={product}
         />
-
-        <div className="flex justify-center py-5 lg:py-15">
-          <button className="bg-pri px-10 py-5 text-center text-white  rounded-lg">
-            View All Products
-          </button>
-        </div>
-        <hr className="text -[#b5b5b5]" />
-      </div>
+       {/* <Slides product={product} prevEl={navReady.prev} nextEl={navReady.next} />
+      <Swiper/> */}
     </div>
   );
 };
 
-export default Today;
+export default Categories;

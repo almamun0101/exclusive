@@ -40,7 +40,7 @@ const Heading = ({ title, heading, endTime ,product}) => {
 
       {/* Pass refs after they are ready */}
       {navReady.prev && navReady.next && (
-        <Slides product={product} prevEl={navReady.prev} nextEl={navReady.next} />
+        <Slides product={product} prevEl={navReady.prev} nextEl={navReady.next} design={"design2"}/>
       )}
     </div>
   );
