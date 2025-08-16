@@ -67,14 +67,21 @@ const product = [
   },
 ];
 const Explore = () => {
-  return <div className="container pb-100 ">
-   <Heading
+  return (
+    <div className="container pb-100 ">
+      <Heading
         title={"Catagoreys"}
         heading={"Browse By Category"}
         product={product}
         design={"design4"}
       />
-    </div>;
+      <div className="flex justify-center py-5 lg:py-15">
+        <button className="bg-pri px-10 py-5 text-center text-white  rounded-lg">
+          View All Products
+        </button>
+      </div>
+    </div>
+  );
 };
 
 export default Explore;
