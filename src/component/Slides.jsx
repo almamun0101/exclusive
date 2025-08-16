@@ -8,14 +8,16 @@ import { CiHeart } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
 
+const Slides = ({ product, prevEl, nextEl, design }) => {
+  let screen = 3; // default
+  if (design === "design1") screen = 4;
+  if (design === "design2") screen = 6;
 
-const Slides = ({ product , prevEl , nextEl , design }) => {
-
-  const renderDesign = (item)=>{
-  switch(design){
-    case"design1":
-    return(
-        <div className="bg-gray-200  group">
+  const renderDesign = (item) => {
+    switch (design) {
+      case "design1":
+        return (
+          <div className="bg-gray-200  group">
             {/* image part of the product  */}
             <div className="  flex flex-col p-5 relative">
               <div className="flex justify-between items-center">
@@ -29,7 +31,11 @@ const Slides = ({ product , prevEl , nextEl , design }) => {
               <span className="absolute top-15 right-6 text-xl bg-gray-100 rounded-full p-1 ">
                 <IoEyeOutline />
               </span>
-              <img src={item.img} alt="" className="object-contain p-5 w-full h-64" />
+              <img
+                src={item.img}
+                alt=""
+                className="object-contain p-5 w-full h-64"
+              />
             </div>
             <a
               href=""
@@ -53,26 +59,34 @@ const Slides = ({ product , prevEl , nextEl , design }) => {
               </div>
             </div>
           </div>
-    )
-    case"design2":
-    return(
-       <div className="boder">
-
-       </div>
-    )
-    
-  }
-}
+        );
+      case "design2":
+        return (
+          <div className="px-5 py-10">
+            <div className="py-6 border-2 border-gray-300 rounded-sm flex justify-center items-center  hover:bg-pri hover:text-white">
+              <div className="flex flex-col items-center gap-4">
+                <img
+                  src={item.img}
+                  alt={item.name}
+                  className="text-green-400"
+                />
+                <h2>{item.name}</h2>
+              </div>
+            </div>
+          </div>
+        );
+    }
+  };
   return (
     <div>
       <div className="w-full mx-auto">
         {" "}
         <Swiper
           modules={[Navigation]}
-           navigation={{
-          prevEl: prevEl,
-          nextEl: nextEl,
-        }}
+          navigation={{
+            prevEl: prevEl,
+            nextEl: nextEl,
+          }}
           spaceBetween={20}
           slidesPerView={1} // default (mobile)
           breakpoints={{
@@ -85,15 +99,13 @@ const Slides = ({ product , prevEl , nextEl , design }) => {
               slidesPerGroup: 1, // slide 1 item at a time
             },
             1024: {
-              slidesPerView: 4, // large screen
+              slidesPerView: screen, // large screen
               slidesPerGroup: 1, // slide 1 item at a time
             },
           }}
         >
           {product.map((item, index) => (
-            <SwiperSlide key={index}>
-              {renderDesign(item)}
-            </SwiperSlide>
+            <SwiperSlide key={index}>{renderDesign(item)}</SwiperSlide>
           ))}
         </Swiper>
       </div>

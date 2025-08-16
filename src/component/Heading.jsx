@@ -4,7 +4,7 @@ import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 import CountDown from "./CountDown";
 import Slides from "./Slides";
 
-const Heading = ({ title, heading, endTime ,product}) => {
+const Heading = ({ title, heading, endTime ,product , design}) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
@@ -40,7 +40,7 @@ const Heading = ({ title, heading, endTime ,product}) => {
 
       {/* Pass refs after they are ready */}
       {navReady.prev && navReady.next && (
-        <Slides product={product} prevEl={navReady.prev} nextEl={navReady.next} design={"design2"}/>
+        <Slides product={product} prevEl={navReady.prev} nextEl={navReady.next} design={design}/>
       )}
     </div>
   );

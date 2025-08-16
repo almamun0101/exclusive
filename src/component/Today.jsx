@@ -77,13 +77,15 @@ const products = [
 const Today = () => {
   return (
     <div>
-      <div className="px-5 container py-10">
+      <div className="px-5 container py-20">
         {/* heading */}
         <Heading
           title={"Today's"}
           heading={"Flash Sale's"}
           endTime={"2025-12-31T23:59:59"}
           product={products}
+          design={"design1"}
+       
         />
 
         <div className="flex justify-center py-5 lg:py-15">
@@ -91,7 +93,7 @@ const Today = () => {
             View All Products
           </button>
         </div>
-        <hr className="text -[#b5b5b5]" />
+        <hr className="text-[#b5b5b5]" />
       </div>
     </div>
   );
