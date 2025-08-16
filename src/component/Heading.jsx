@@ -27,6 +27,8 @@ const Heading = ({ title, heading, endTime ,product , design}) => {
           <h3 className="font-bold text-4xl">{heading}</h3>
           {!isNaN(new Date(endTime).getTime()) && <CountDown endTime={endTime} design={design} />}
         </div>
+        {
+          product && 
 
         <div className="flex items-center gap-5">
           <div ref={prevRef}>
@@ -36,10 +38,11 @@ const Heading = ({ title, heading, endTime ,product , design}) => {
             <IoIosArrowRoundForward className="bg-gray-200 p-1 text-4xl rounded-full" />
           </div>
         </div>
+        }
       </div>
 
       {/* Pass refs after they are ready */}
-      {navReady.prev && navReady.next && (
+      {product && navReady.prev && navReady.next && (
         <Slides product={product} prevEl={navReady.prev} nextEl={navReady.next} design={design}/>
       )}
     </div>

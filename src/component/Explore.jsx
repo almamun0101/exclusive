@@ -68,7 +68,7 @@ const product = [
 ];
 const Explore = () => {
   return (
-    <div className="container pb-100 ">
+    <div className="container px-5 ">
       <Heading
         title={"Catagoreys"}
         heading={"Browse By Category"}
