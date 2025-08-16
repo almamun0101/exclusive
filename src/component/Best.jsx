@@ -40,7 +40,7 @@ const product = [
 const endTime="2025-12-31T23:59:59";
 const Best = () => {
   return (
-    <div className="pb-200 container w-full px-5">
+    <div className="container w-full px-5">
       <Heading
         title={"This Month"}
         heading={"Best Selling Products"}

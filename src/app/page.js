@@ -1,5 +1,6 @@
 import Best from '@/component/Best'
 import Categories from '@/component/Categories'
+import Explore from '@/component/Explore'
 import Header from '@/component/Header'
 import Navbar from '@/component/Navbar'
 import Today from '@/component/Today'
@@ -15,6 +16,7 @@ const page = () => {
       <Today/>
       <Categories/>
       <Best/>
+      <Explore/>
     </div>
   )
 }
