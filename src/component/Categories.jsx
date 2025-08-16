@@ -41,7 +41,7 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className="container ">
+    <div className="container px-5">
       <Heading
         title={"Catagoreys"}
         heading={"Browse By Category"}
