@@ -1,5 +1,7 @@
 import React from "react";
 import Heading from "./Heading";
+import CountDown from "./CountDown";
+
 
 const product = [
   {
@@ -35,6 +37,7 @@ const product = [
     review: "78",
   },
 ];
+const endTime="2025-12-31T23:59:59";
 const Best = () => {
   return (
     <div className="pb-200 container w-full px-5">
@@ -52,10 +55,8 @@ const Best = () => {
               <h3 className="text-[#06d48f] pb-10">Catagories</h3>
               <h2 className="text-4xl w-80">Enhance Your Music Experience</h2>
               <div className="flex justify-between gap-2 py-5  ">
-                <div className="w-10 h-10 bg-white rounded-full "></div>
-                <div className="w-10 h-10 bg-white rounded-full "></div>
-                <div className="w-10 h-10 bg-white rounded-full "></div>
-                <div className="w-10 h-10 bg-white rounded-full "></div>
+                {!isNaN(new Date(endTime).getTime()) && <CountDown endTime={endTime} design={"design2"} />}
+              
               </div>
               <button className="bg-[#00ff66] w-50 px-5 py-2 rounded-lg my-10 ">Buy Now</button>
             </div>

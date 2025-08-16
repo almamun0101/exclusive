@@ -25,7 +25,7 @@ const Heading = ({ title, heading, endTime ,product , design}) => {
       <div className="flex justify-between py-5">
         <div className="flex flex-wrap items-center gap-5 lg:gap-20">
           <h3 className="font-bold text-4xl">{heading}</h3>
-          {!isNaN(new Date(endTime).getTime()) && <CountDown endTime={endTime} />}
+          {!isNaN(new Date(endTime).getTime()) && <CountDown endTime={endTime} design={design} />}
         </div>
 
         <div className="flex items-center gap-5">
