@@ -6,7 +6,7 @@ const products = [
     img: "product1.png",
     offer: "120",
     price: "160",
-    discount: "40",
+    discount: "4",
     rating: "5",
     review: "88",
   },

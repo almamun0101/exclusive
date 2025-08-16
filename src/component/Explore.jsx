@@ -44,29 +44,37 @@ const product = [
     color: ["#fa1414", "#db4444"],
   },
   {
-    img: "product5.png",
-    name: "Breed Dry Dog Food",
-    price: "100",
+    img: "product10.png",
+    name: "Jr. Zoom Soccer Cleats",
+    price: "1160",
     rating: "4",
     review: "35",
+    color: ["#efff61 ", "#db4444"],
   },
   {
-    img: "product5.png",
-    name: "Breed Dry Dog Food",
-    price: "100",
+    img: "product11.png",
+    name: "GP11 Shooter USB Gamepad",
+    price: "660",
     rating: "4",
-    review: "35",
+    review: "55",
   },
   {
-    img: "product5.png",
-    name: "Breed Dry Dog Food",
-    price: "100",
+    img: "product12.png",
+    name: "Quilted Satin Jacket",
+    price: "10s0",
     rating: "4",
-    review: "35",
+    review: "3s5",
   },
 ];
 const Explore = () => {
-  return <div className="container pb-100">{/* <Heading/>pro */}</div>;
+  return <div className="container pb-100 ">
+   <Heading
+        title={"Catagoreys"}
+        heading={"Browse By Category"}
+        product={product}
+        design={"design4"}
+      />
+    </div>;
 };
 
 export default Explore;
