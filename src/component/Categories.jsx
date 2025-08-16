@@ -28,6 +28,7 @@ const product = [
     name: "Gaming",
   },
 ];
+
 const Categories = () => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -40,7 +41,7 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className="container pb-200">
+    <div className="container ">
       <Heading
         title={"Catagoreys"}
         heading={"Browse By Category"}
