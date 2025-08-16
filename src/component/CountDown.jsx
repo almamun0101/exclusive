@@ -58,7 +58,7 @@ function Box2({ label, value }) {
   return (
     <div className="flex flex-col   items-center bg-white rounded-full text-black justify-center  w-20 h-20">
       <div className="text-lg font-mono font-bold">{value}</div>
-      <div className="text-sm font-bold font-sans text-gray-500">{label}</div>
+      <div className="text-xs font-bold font-sans text-gray-500">{label}</div>
     </div>
   );
 }
