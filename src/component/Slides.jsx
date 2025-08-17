@@ -236,7 +236,7 @@ const Slides = ({ product, prevEl, nextEl, design }) => {
         >
           {product.map((item, index) => (
             <SwiperSlide
-              className="flex items-center justify-center bg-blue-200 h-32 rounded-lg"
+              className="flex items-center justify-center  h-32 rounded-lg"
               key={index}
             >
               {renderDesign(item)}

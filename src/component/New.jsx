@@ -84,7 +84,7 @@ const New = () => {
       </div>
 
       {/* service */}
-      <div className="flex gap-10 justify-between items-center py-40 px-20 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 justify-between items-center py-20 lg:py-40 lg:px-20 ">
         <div className="flex flex-col items-center gap-1">
           <div className="bg-black rounded-full p-3 ring-gray-300 ring-10">
             <img src="./delivery.png" alt="delivery" className="" />
