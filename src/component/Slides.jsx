@@ -84,7 +84,7 @@ const Slides = ({ product, prevEl, nextEl, design }) => {
         );
       case "design2":
         return (
-          <div className="px-5 py-10">
+          <div className="">
             <div className="py-6 border-2 border-gray-300 rounded-sm flex justify-center items-center  hover:bg-pri hover:text-white">
               <div className="flex flex-col items-center gap-4">
                 <img
