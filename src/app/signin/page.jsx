@@ -3,21 +3,28 @@ import Footer from "@/component/Footer";
 import Navbar from "@/component/Navbar";
 import Topbar from "@/component/Topbar";
 import React, { useState } from "react";
-
+import firebaseConfig from "@/firebase.config";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 const page = () => {
+  const auth = getAuth();
   const [nameInput, setNameInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
 
-  const handleSubmit = (e)=>{
-    e.preventDefault()
-    const userLoginInfo = {
-      name : nameInput,
-      email: emailInput,
-      password : passwordInput,
-    }
-    console.log(userLoginInfo)
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+   
+    createUserWithEmailAndPassword(auth, emailInput, passwordInput)
+      .then((userCredential) => {
+        // Signed up
+       console.log("Accout Create Successfully")
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log( errorCode, errorMessage)
+      });
+  };
 
   return (
     <div>
@@ -33,7 +40,11 @@ const page = () => {
             Create an account
           </h2>
           <p className="">Enter Details Below</p>
-          <form onSubmit={handleSubmit} action="" className="flex flex-col py-5 gap-5">
+          <form
+            onSubmit={handleSubmit}
+            action=""
+            className="flex flex-col py-5 gap-5"
+          >
             <input
               type="text"
               className="border-b-3 border-gray-400 p-2"
@@ -58,7 +69,10 @@ const page = () => {
             <button className="mt-5 bg-pri text-white rounded-sm w-full py-5">
               Create Account
             </button>
-            <button  type={"submit"} className="border-2 flex items-center justify-center text-lg gap-5 border-black/20 text-black rounded-sm w-full p-2">
+            <button
+              type={"submit"}
+              className="border-2 flex items-center justify-center text-lg gap-5 border-black/20 text-black rounded-sm w-full p-2"
+            >
               {" "}
               <img src="./googleicon.png" alt="googleicon" className="w-10 " />
               Sign up With Google
