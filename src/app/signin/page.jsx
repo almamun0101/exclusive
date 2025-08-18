@@ -5,7 +5,7 @@ import Topbar from "@/component/Topbar";
 import React, { useState } from "react";
 import firebaseConfig from "@/firebase.config";
 import { getAuth, signInWithEmailAndPassword  } from "firebase/auth";
-import { redirect } from "next/dist/server/api-utils";
+
 import { useRouter } from "next/navigation";
 
 
@@ -42,7 +42,7 @@ const page = () => {
           <img src="SideImage.png" alt="SideImage" />
         </div>
 
-        <div className="md:w-1/2 ">
+        <div className="w-full mx-auto md:w-1/2 ">
           <h2 className="text-3xl font-bold tracking-wide py-2">
             Login To Your account
           </h2>

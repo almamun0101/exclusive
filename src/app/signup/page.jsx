@@ -41,7 +41,7 @@ const page = () => {
           <img src="SideImage.png" alt="SideImage" />
         </div>
 
-        <div className="md:w-1/2 ">
+        <div className="md:w-1/2 mx-auto w-full">
           <h2 className="text-3xl font-medium tracking-wider py-2">
             Create an account
           </h2>
