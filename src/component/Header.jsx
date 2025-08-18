@@ -17,7 +17,7 @@ const slides = [
 const Header = () => {
   return (
     <div>
-      <div className="border-t ">
+      <div className=" ">
         <div className="container flex justify-between ">
           <div className="md:w-1/4 py-5  border-black">
             <div className="hidden md:flex flex-col px-5 gap-3 border-r">

@@ -7,8 +7,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div>
-      <div className="container px-10">
+    <div className="border-b border-black/20">
+      <div className="container px-10 ">
         <nav className="flex justify-between items-center">
           <h2 className="font-extrabold text-xl ">Exclusive</h2>
           <ul className="hidden  md:flex  transform items-center gap-5  text-center ">
