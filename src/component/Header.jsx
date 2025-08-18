@@ -2,8 +2,18 @@ import Link from "next/link";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { GoDotFill } from "react-icons/go";
+import Slides from "./Slides";
+import AutoSlide from "./AutoSlide";
 
+const slides = [
 
+  "/banner.png",
+  "/banner2.jpg",
+  "/banner3.png",
+  "/banner4.jpg",
+  "/banner5.png",
+
+];
 const Header = () => {
   return (
     <div>
@@ -24,10 +34,10 @@ const Header = () => {
           </div>
           <div className="p-5 w-full">
             <div className="bg-black grid grid-cols-1 sm:grid-cols-2 justify-between relative">
-              <div className="text-white p-10 pt-20">
+              <div className="text-white p-10 lg:pt-20">
                 <div className="flex items-center pb-5 gap-5 ">
                   <img src="applelogo.png" alt="" />
-                  <h2 >Iphone 14 Seriess</h2>
+                  <h2>Iphone 14 Seriess</h2>
                 </div>
                 <h1 className="w-50 text-4xl font-bold pb-10">
                   Up to 10% of voucher
@@ -46,7 +56,10 @@ const Header = () => {
                   <GoDotFill className="text-gray-400 hover:ring hover:ring-white rounded-full" />
                 </div>
               </div>
-              <img src="banner.png" alt="" className=""/>
+             
+              <div className="flex items-center  ">
+              <AutoSlide slides={slides}/>
+              </div>
             </div>
           </div>
         </div>
