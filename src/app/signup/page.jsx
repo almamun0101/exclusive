@@ -36,12 +36,12 @@ const page = () => {
     <div>
       <Topbar />
       <Navbar />
-      <div className="container flex justify-between py-10 px-5 gap-5 items-center">
-        <div className="hidden md:block w-1/2">
-          <img src="SideImage.png" alt="SideImage" />
+      <div className="flex justify-between items-center py-20 gap-5">
+        <div className="hidden md:block md:w-1/2">
+        <img src="SideImage.png" alt="SideImage" className="w-full"/>
         </div>
 
-        <div className="md:w-1/2 mx-auto w-full">
+        <div className="md:w-1/3 w-full container">
           <h2 className="text-3xl font-medium tracking-wider py-2">
             Create an account
           </h2>

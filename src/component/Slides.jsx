@@ -140,7 +140,7 @@ const Slides = ({ product, prevEl, nextEl, design }) => {
             </div>
           </div>
         );
-        case "design4":
+      case "design4":
         return (
           <div className="bg-gray-200  group">
             {/* image part of the product  */}
@@ -213,24 +213,23 @@ const Slides = ({ product, prevEl, nextEl, design }) => {
             nextEl: nextEl,
           }}
           spaceBetween={20}
-          grid={
-            (design=="design4") ?
-            {rows: 2, 
-            fill: "row",}:undefined
-          }
+          grid={design == "design4" ? { rows: 1, fill: "row" } : undefined}
           slidesPerView={1} // default (mobile)
           breakpoints={{
             640: {
               slidesPerView: 2, // large screen
               slidesPerGroup: 1, // slide 1 item at a time
+              grid: { row: 1, fill: "row" },
             },
             768: {
               slidesPerView: 3, // large screen
               slidesPerGroup: 1, // slide 1 item at a time
+               grid: { row: 2, fill: "row" },
             },
             1024: {
               slidesPerView: screen, // large screen
               slidesPerGroup: 2, // slide 1 item at a time
+               grid: { rows: 2, fill: "row" },
             },
           }}
         >

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 import { CiSearch, CiHeart, CiMenuFries } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
@@ -22,7 +23,7 @@ const Navbar = () => {
               <a href="">About</a>
             </li>
             <li className="relative inline-block after:absolute after:content-[''] after:transition-[width] after:duration-300 after:ease-out hover:after:w-full after:h-[2px] after:bg-black/60 after:-bottom-1 after:rounded-2xl after:left-0 after:w-0">
-              <a href="">Sign Up</a>
+             <Link href={"/signup"}>Sign up</Link>
             </li>
           </ul>
 
