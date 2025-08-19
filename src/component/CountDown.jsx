@@ -56,8 +56,8 @@ function Box({ label, value }) {
 }
 function Box2({ label, value }) {
   return (
-    <div className="flex flex-col   items-center bg-white rounded-full text-black justify-center  w-20 h-20">
-      <div className="text-lg font-mono font-bold">{value}</div>
+    <div className="flex flex-col   items-center bg-white rounded-full text-black justify-center w-16 h-16  lg:w-20 lg:h-20">
+      <div className="text-base lg:text-lg font-mono font-bold">{value}</div>
       <div className="text-xs font-bold font-sans text-gray-500">{label}</div>
     </div>
   );

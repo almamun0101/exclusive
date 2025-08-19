@@ -50,7 +50,7 @@ const Best = () => {
 
       <div className="py-20">
         <div className="bg-black text-white py-30 px-0">
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 justify-between items-center px-10">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 justify-between items-center px-5 lg:px-10">
             <div className="flex flex-col justify-center ">
               <h3 className="text-[#06d48f] pb-10">Catagories</h3>
               <h2 className="text-4xl w-80 tracking-wider leading-12 ">Enhance Your Music Experience</h2>
