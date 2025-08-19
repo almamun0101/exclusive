@@ -4,45 +4,43 @@ import Navbar from "@/component/Navbar";
 import Topbar from "@/component/Topbar";
 import React, { useState } from "react";
 import firebaseConfig from "@/firebase.config";
-import { getAuth, signInWithEmailAndPassword  } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 import { useRouter } from "next/navigation";
 
-
 const page = () => {
   const auth = getAuth();
- const router = useRouter();
+  const router = useRouter();
   const [nameInput, setNameInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
+
     signInWithEmailAndPassword(auth, emailInput, passwordInput)
       .then((userCredential) => {
         // Signed up
-       console.log("Login Successfully")
-      router.push("/");
+        console.log("Login Successfully");
+        router.push("/");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log( errorCode, errorMessage)
+        console.log(errorCode, errorMessage);
       });
-
   };
 
   return (
     <div>
       <Topbar />
       <Navbar />
-      <div className="container flex justify-between py-10 px-5 gap-5 items-center">
+      <div className=" flex justify-between py-20 gap-5 items-center min-h-screen">
         <div className="hidden md:block w-1/2">
           <img src="SideImage.png" alt="SideImage" />
         </div>
 
-        <div className="w-full mx-auto md:w-1/2 ">
+        <div className="container w-full mx-auto md:w-1/3 ">
           <h2 className="text-3xl font-bold tracking-wide py-2">
             Login To Your account
           </h2>
@@ -51,7 +49,6 @@ const page = () => {
             action=""
             className="flex flex-col py-5 gap-5"
           >
-         
             <input
               type="email"
               className="border-b-3 border-gray-400 p-2"
@@ -78,9 +75,9 @@ const page = () => {
               Sign up With Google
             </button>
             <p className="text-gray-500 pb-10 text-center">
-             Login Problem ?{" "}
+              Login Problem ?{" "}
               <a href="" className="underline">
-              Need Help
+                Need Help
               </a>
             </p>
           </form>
