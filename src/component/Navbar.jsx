@@ -23,7 +23,7 @@ const Navbar = () => {
               <a href="">About</a>
             </li>
             <li className="relative inline-block after:absolute after:content-[''] after:transition-[width] after:duration-300 after:ease-out hover:after:w-full after:h-[2px] after:bg-black/60 after:-bottom-1 after:rounded-2xl after:left-0 after:w-0">
-             <Link href={"/signup"}>Sign up</Link>
+             <Link href={"/signin"}>Sign up</Link>
             </li>
           </ul>
 
