@@ -5,12 +5,14 @@ import Topbar from "@/component/Topbar";
 import React, { useState } from "react";
 import firebaseConfig from "@/firebase.config";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
+import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
+import { login } from "../store/userSlice";
 
 const page = () => {
   const auth = getAuth();
   const router = useRouter();
+  const dispatch = useDispatch()
   const [nameInput, setNameInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
@@ -21,6 +23,7 @@ const page = () => {
     signInWithEmailAndPassword(auth, emailInput, passwordInput)
       .then((userCredential) => {
         // Signed up
+        dispatch(login({ name: "Al Mamun", email: "mamun@example.com" }));
         console.log("Login Successfully");
         router.push("/");
       })
