@@ -5,10 +5,10 @@ import { ShoppingCart } from "lucide-react";
 
 const ProductView = () => {
   const thumbnails = [
-    "/images/product1.jpg",
-    "/images/product2.jpg",
-    "/images/product3.jpg",
-    "/images/product4.jpg",
+    "product13.png",
+    "product14.png",
+    "product15.png",
+    "product16.png",
   ];
 
   const [mainImg, setMainImg] = useState(thumbnails[0]);
