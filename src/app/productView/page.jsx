@@ -1,7 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import { FaStar, FaHeart } from "react-icons/fa";
-import { ShoppingCart } from "lucide-react";
+import { CiHeart } from "react-icons/ci";
+import { FaPlus } from "react-icons/fa6";
+import { FaMinus } from "react-icons/fa6";
+import { TbTruckDelivery } from "react-icons/tb";
+import Heading from "@/component/Heading";
 
 const ProductView = () => {
   const thumbnails = [
@@ -10,12 +14,86 @@ const ProductView = () => {
     "product15.png",
     "product16.png",
   ];
+  const products = [
+  {
+    name: "HAVIT HV-G92 Gamepad",
+    img: "product1.png",
+    offer: "120",
+    price: "160",
+    discount: "4",
+    rating: "5",
+    review: "88",
+  },
+  {
+    name: "AK-900 Wired Keyboard",
+    img: "product2.png",
+    offer: "1160",
+    price: "960",
+    discount: "35",
+    rating: "4",
+    review: "76",
+  },
+  {
+    name: "IPS LCD Gaming Monitor",
+    img: "product3.png",
+    offer: "370",
+    price: "400",
+    discount: "30",
+    rating: "5",
+    review: "99",
+  },
+  {
+    name: "S-Series Comfort Chair ",
+    img: "product4.png",
+    offer: "375",
+    price: "400",
+    discount: "25",
+    rating: "4.5",
+    review: "78",
+  },
+  {
+    name: "HAVIT HV-G92 Gamepad",
+    img: "product1.png",
+    offer: "120",
+    price: "160",
+    discount: "40",
+    rating: "5",
+    review: "88",
+  },
+  {
+    name: "AK-900 Wired Keyboard",
+    img: "product2.png",
+    offer: "1160",
+    price: "960",
+    discount: "35",
+    rating: "4",
+    review: "76",
+  },
+  {
+    name: "IPS LCD Gaming Monitor",
+    img: "product3.png",
+    offer: "370",
+    price: "400",
+    discount: "30",
+    rating: "5",
+    review: "99",
+  },
+  {
+    name: "S-Series Comfort Chair ",
+    img: "product4.png",
+    offer: "375",
+    price: "400",
+    discount: "25",
+    rating: "4.5",
+    review: "78",
+  },
+];
 
   const [mainImg, setMainImg] = useState(thumbnails[0]);
 
   return (
     <div className="container mx-auto ">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full mx-auto my-20">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full mx-auto my-20 items-start">
         {/* Left Side - Thumbnails */}
         <div className="lg:col-span-2 flex lg:flex-col gap-4 justify-center ">
           {thumbnails.map((img, index) => (
@@ -32,7 +110,7 @@ const ProductView = () => {
         </div>
 
         {/* Middle - Main Image */}
-        <div className="lg:col-span-7 flex justify-center ">
+        <div className="lg:col-span-6 flex justify-center ">
           <img
             src={mainImg}
             alt="main product"
@@ -41,13 +119,13 @@ const ProductView = () => {
         </div>
 
         {/* Right Side - Product Details */}
-        <div className="lg:col-span-3 flex flex-col gap-6">
+        <div className="lg:col-span-4 flex flex-col gap-4">
           {/* Title & Rating */}
           <div>
             <h2 className="text-2xl font-bold text-gray-800">
               Havic HV G-92 Gamepad
             </h2>
-            <div className="flex justify-between items-center gap-1 mt-2">
+            <div className="flex  items-center gap-1 mt-2">
               {[...Array(5)].map((_, i) => (
                 <FaStar key={i} className="text-yellow-500" />
               ))}
@@ -62,11 +140,10 @@ const ProductView = () => {
             PlayStation 5 Controller Skin High quality vinyl with air channel
             adhesive for easy bubble free install & mess free removal Pressure
             sensitive.
-          
           </p>
           <hr />
           {/* Color Options */}
-          <div className="flex jbetween items-center gap-6"> 
+          <div className="flex jbetween items-center gap-6">
             <h3 className="font-medium mb-2">Colous:</h3>
             <div className="flex gap-3">
               <span className="w-8 h-8 rounded-full bg-black cursor-pointer border-2 border-gray-300"></span>
@@ -76,7 +153,7 @@ const ProductView = () => {
           </div>
 
           {/* Size Options */}
-          <div className="flex jbetween items-center gap-6"> 
+          <div className="flex jbetween items-center gap-6">
             <h3 className="font-medium mb-2">Size:</h3>
             <div className="flex gap-3">
               {["S", "M", "L", "XL"].map((size) => (
@@ -91,27 +168,59 @@ const ProductView = () => {
           </div>
 
           {/* Add to Cart & Favourite */}
-          <div className="flex items-center gap-4">
-            <button className="flex items-center gap-2 bg-black text-white px-6 py-3 rounded-xl hover:bg-gray-800 transition">
-              <ShoppingCart size={20} />
-              Add to Cart
-            </button>
-            <button className="px-6 py-3 border rounded-xl hover:bg-gray-100 transition">
+          <div className="flex  items-center gap-2">
+            <div className="border rounded flex items-center justify-between gap-5">
+              <button className="flex border-r items-center gap-2  px-3 py-2  transition">
+                <FaMinus size={20} />
+              </button>
+              <p className="px-3">2</p>
+              <button className="flex items-center gap-2 bg-red-500 text-white  px-3 py-2  transition">
+                <FaPlus size={20} />
+              </button>
+            </div>
+            <button className="px-5 py-2 bg-red-500 text-white   border rounded-sm hover:bg-gray-100 transition">
               Buy Now
             </button>
-            <button className="flex items-center justify-center w-12 h-12 border rounded-xl hover:bg-red-100 text-red-500">
-              <FaHeart />
+            <button className="flex items-center justify-center px-2 py-1 border rounded-xl text-gray-500 hover:bg-red-100 hover:text-red-500">
+              <CiHeart size={30} />
             </button>
           </div>
 
           {/* Delivery & Return Info */}
-          <div className="text-sm text-gray-600 space-y-2">
-            <p>🚚 Free delivery within 3-5 business days</p>
-            <p>🔄 30-day return & refund policy</p>
-            <p>💳 Cash on Delivery Available</p>
+          <div className="border flex flex-col justify-between items-center ">
+            <div className="p-4 flex gap-5 justify-between">
+              <TbTruckDelivery size={100} />
+              <div className="">
+                <h4 className="font-semibold mb-2">Delivery & Returns</h4>
+                <p className="text-sm text-gray-600">
+                  Free delivery on orders over $100. Easy returns within 30
+                  days.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-4 flex gap-5 items-center border-t jsutify-between">
+              <img src="/return.png" alt="" />
+              <div className="">
+                <h4 className="font-semibold mb-2">Delivery & Returns</h4>
+                <p className="text-sm text-gray-600">
+                  Free delivery on orders over $100. Easy returns within 30
+                  days.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+     <Heading
+          title={"Related"}
+          
+        
+          product={products}
+          design={"design4"}
+       
+        />
     </div>
   );
 };
