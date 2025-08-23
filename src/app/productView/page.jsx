@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { FaStar, FaHeart } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import { FaPlus } from "react-icons/fa6";
@@ -7,14 +7,13 @@ import { FaMinus } from "react-icons/fa6";
 import { TbTruckDelivery } from "react-icons/tb";
 import Heading from "@/component/Heading";
 
-const ProductView = () => {
-  const thumbnails = [
-    "product13.png",
-    "product14.png",
-    "product15.png",
-    "product16.png",
-  ];
-  const products = [
+const thumbnails = [
+  "product13.png",
+  "product14.png",
+  "product15.png",
+  "product16.png",
+];
+const products = [
   {
     name: "HAVIT HV-G92 Gamepad",
     img: "product1.png",
@@ -88,7 +87,8 @@ const ProductView = () => {
     review: "78",
   },
 ];
-
+const ProductView = () => {
+  const [count ,setCount ] = useState(1);
   const [mainImg, setMainImg] = useState(thumbnails[0]);
 
   return (
@@ -102,7 +102,7 @@ const ProductView = () => {
               src={img}
               alt="thumbnail"
               onClick={() => setMainImg(img)}
-              className={`w-30 h-30 p-5  rounded-xl cursor-pointer border-2 ${
+              className={`w-30 h-30 p-5 bg-black/2 rounded-xl cursor-pointer border-2 ${
                 mainImg === img ? "border-black" : "border-gray-200"
               }`}
             />
@@ -170,15 +170,15 @@ const ProductView = () => {
           {/* Add to Cart & Favourite */}
           <div className="flex  items-center gap-2">
             <div className="border rounded flex items-center justify-between gap-5">
-              <button className="flex border-r items-center gap-2  px-3 py-2  transition">
+              <button onClick={()=>count!=0 && setCount(count-1)}  className="flex border-r items-center gap-2  px-3 py-2  transition">
                 <FaMinus size={20} />
               </button>
-              <p className="px-3">2</p>
-              <button className="flex items-center gap-2 bg-red-500 text-white  px-3 py-2  transition">
+              <p className="px-3">{count}</p>
+              <button onClick={()=>setCount(count+1)} className="flex items-center gap-2 bg-red-500 text-white  px-3 py-2  transition">
                 <FaPlus size={20} />
               </button>
             </div>
-            <button className="px-5 py-2 bg-red-500 text-white   border rounded-sm hover:bg-gray-100 transition">
+            <button className="px-5 py-2 bg-red-500 text-white   border rounded-sm hover:scale-95 transition">
               Buy Now
             </button>
             <button className="flex items-center justify-center px-2 py-1 border rounded-xl text-gray-500 hover:bg-red-100 hover:text-red-500">
@@ -212,15 +212,10 @@ const ProductView = () => {
           </div>
         </div>
       </div>
+<div className="py-10 pb-20">
 
-     <Heading
-          title={"Related"}
-          
-        
-          product={products}
-          design={"design4"}
-       
-        />
+      <Heading title={"Related"} product={products} design={"design1"} />
+</div>
     </div>
   );
 };
