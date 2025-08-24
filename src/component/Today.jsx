@@ -9,6 +9,7 @@ const products = [
     discount: "4",
     rating: "5",
     review: "88",
+    slug : "havit-hv-g92-gamepad",
   },
   {
     name: "AK-900 Wired Keyboard",

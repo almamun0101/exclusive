@@ -15,14 +15,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
+   
+      <div>
         {/* You can add shared UI components here, like a header or navbar */}
         <Topbar />
         <Navbar />
         {children}
         <Footer />
-      </body>
-    </html>
+      </div>
+   
   );
 }

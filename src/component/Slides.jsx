@@ -8,8 +8,11 @@ import React from "react";
 import { CiHeart } from "react-icons/ci";
 import { FaStar } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
+import { useRouter } from "next/navigation";
+
 
 const Slides = ({ product, prevEl, nextEl, design }) => {
+  const router = useRouter()
   const offer = (discount, price) => {
     return price - (price * discount) / 100;
   };
@@ -19,12 +22,15 @@ const Slides = ({ product, prevEl, nextEl, design }) => {
   if (design === "design2") screen = 6;
   if (design === "design3") screen = 4;
   if (design === "design4") screen = 4;
-
+   const handleProduct=(item)=>{
+     router.push(`/productView/${item.slug}`);
+      console.log(item)
+   }
   const renderDesign = (item) => {
     switch (design) {
       case "design1":
         return (
-          <div className="bg-gray-200  group">
+          <div className="bg-gray-200 group" onClick={()=>handleProduct(item)}>
             {/* image part of the product  */}
             <div className="  flex flex-col p-5 relative">
               <div className="flex justify-between items-center">
@@ -42,7 +48,8 @@ const Slides = ({ product, prevEl, nextEl, design }) => {
               </span>
               <img
                 src={item.img}
-                alt=""
+                alt={item.name}
+                
                 className="object-contain p-5 w-full h-64"
               />
             </div>
