@@ -13,8 +13,8 @@ const Footer = () => {
             <h2 className="">Subscribe</h2>
             <h2 className="">Get 10% off your first order</h2>
             <div className="relative">
+              <IoSendOutline size={22}  className="absolute top-2 right-[10%] transform -translate-x-6"/>
               <input type="text" placeholder="Enter your email " className="border bordr-white p-2"/>
-              <IoSendOutline size={22}  className="absolute top-2 right-10"/>
             </div>
           </div>
 
@@ -44,7 +44,7 @@ const Footer = () => {
             <h2 className="">Contact</h2>
           </div>
           {/* left side bottom */}
-          <div className="flex flex-col text-left gap-2">
+          <div className="flex flex-col text-left gap-2 justify-center items-center">
             <h2 className="text-2xl font-bold">Download App</h2>
             <h2 className="text-xs"> Save $3 with App New User Only</h2>
           <div className="flex gap-2 mx-auto ">
